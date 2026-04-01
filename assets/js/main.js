@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const response = await fetch("assets/data/receitas.json");
   const receitas = await response.json();
 
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
   receitas.forEach(r => {
     const card = document.createElement("div");
     card.classList.add("card");
+    card.dataset.id = r.id;
 
-    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
     const isFav = favoritos.includes(r.id);
 
     card.innerHTML = `
@@ -21,8 +23,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         <div class="card-actions">
           <button class="btn">Modo de preparo</button>
+
           <button class="btn btn-fav ${isFav ? "active" : ""}">
-            <span class="heart">❤</span> Favoritar
+            ${isFav ? "Desfavoritar" : "Favoritar"}
+            <span class="heart">${isFav ? "❤" : "♡"}</span>
           </button>
         </div>
       </div>
@@ -37,17 +41,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!btn) return;
 
     const card = btn.closest(".card");
-    const index = [...container.children].indexOf(card);
-    const id = receitas[index].id;
+    const id = card.dataset.id;
 
     let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    const heart = btn.querySelector(".heart");
 
     if (favs.includes(id)) {
       favs = favs.filter(f => f !== id);
       btn.classList.remove("active");
+      btn.innerHTML = `Favoritar <span class="heart">♡</span>`;
     } else {
       favs.push(id);
       btn.classList.add("active");
+      btn.innerHTML = `Desfavoritar <span class="heart">❤</span>`;
     }
 
     localStorage.setItem("favoritos", JSON.stringify(favs));

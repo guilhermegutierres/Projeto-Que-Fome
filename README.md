@@ -136,22 +136,62 @@ A integração entre modelagem de dados, regras de negócio e requisitos funcion
 #### 3.3.1 Interface Objetivo
 Tela principal do sistema onde são exibidas as receitas disponíveis. Nessa interface, o usuário pode visualizar informações básicas como título, imagem e uma breve descrição de cada receita, servindo como ponto inicial para navegação e interação com o blog. 
 
+![Interface Objetivo](https://private-user-images.githubusercontent.com/134294462/572672038-7a3da728-cb0f-45f1-9b96-47bf9ec4c1b5.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjYxODcsIm5iZiI6MTc3NTA2NTg4NywicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjcyMDM4LTdhM2RhNzI4LWNiMGYtNDVmMS05Yjk2LTQ3YmY5ZWM0YzFiNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxNzUxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iYmNmMjFiNzgxZGU1ZWE4NDE1NmIxYzgwOWJiYjA0NTBhZjlkMmI5MDJiZWZlOGMxN2EzYzVkYmYxNjliZDU5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.2HYazFvsoMeL8kbuCTY3mV8UBcxXio4Dyg5NJNtn8Is)
+
 #### 3.3.2 Visualização de Receitas
 Permite ao usuário visualizar as receitas disponíveis na plataforma, incluindo título, imagem, ingredientes e modo de preparo.
+
+![Visualização de Receita](https://private-user-images.githubusercontent.com/134294462/572674107-94ae46c2-97ac-4928-952b-27b2b0e998a3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjY0NDcsIm5iZiI6MTc3NTA2NjE0NywicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjc0MTA3LTk0YWU0NmMyLTk3YWMtNDkyOC05NTJiLTI3YjJiMGU5OThhMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxNzU1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMzM3ODlkYmY3NmVkZmJiMGMwODYyYWQ5ZjQ3ZDU2MGIwMDAxMTliZWFiNzE5MjIxMjEyYzJiMDg3N2U2MzMzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.EZAcgfALk80LmRsqkUrtrW4xHZ_QCR1kEDJbjUgW98g)
+
+#### 3.3.3 Marcar receitas favoritas
+Funcionalidade que permite alternar entre temas claros e escuros durante o uso da aplicação baseado no código abaixo
+
+```
+'use strict';
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.dark-toggle');   // novo botão
+    const icon   = toggle.querySelector('i');                // ícone dentro do botão
+
+    toggle.addEventListener('click', function() {
+        if (document.body.classList.contains('light-theme')) {
+            document.body.classList.remove('light-theme');
+            document.body.classList.add('dark-theme');
+            // troca ícone para sol
+            icon.classList.replace('ri-moon-line', 'ri-sun-line');
+        } else {
+            document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
+            // troca ícone para lua
+            icon.classList.replace('ri-sun-line', 'ri-moon-line');
+        }
+    });
+});
+
+```
+![Dark Mode](https://private-user-images.githubusercontent.com/134294462/572679162-29712871-5e8d-424d-b6b0-4b5c0932db42.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjcyMDgsIm5iZiI6MTc3NTA2NjkwOCwicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjc5MTYyLTI5NzEyODcxLTVlOGQtNDI0ZC1iNmIwLTRiNWMwOTMyZGI0Mi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxODA4MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04Zjg2NTI0MWI0MzY2YzUwZjVlYTM1YTE3MjgwMzY0YTQ2YjIyNjZhNzY4YjQ2YWE2NzVhZDRlOTExNjA4NmY4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.JKUWNoA5AWGSlTBfQYjsGQenUVSoQt1SjLBz8kc2nbU)
 
 #### 3.3.3 Marcar receitas favoritas
 Funcionalidade que permite ao usuário marcar receitas como favoritas, facilitando o acesso rápido posteriormente.
 
+![Marcação de favorito](https://private-user-images.githubusercontent.com/134294462/572672037-d0360c47-08ce-4b03-b008-d4c4b6d8f779.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjY0NDcsIm5iZiI6MTc3NTA2NjE0NywicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjcyMDM3LWQwMzYwYzQ3LTA4Y2UtNGIwMy1iMDA4LWQ0YzRiNmQ4Zjc3OS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxNzU1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YWNlZmU1ZjY1ZjZhZjA2MzdkOGY0ODdjYzc3N2U3ZjVhNGM2NGMyOTliNTgzNzc4ZjAyNGNlYzBkYmYwMjdmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.OMFTwzqOta2JoSr-RFlpG0cNE1qd85hCSugxESSlNIY)
+
 #### 3.3.4 Guia de receitas marcadas como favorita
 Seção onde são exibidas todas as receitas que o usuário marcou como favoritas, organizadas para fácil consulta.
+
+![Aba de favoritos](https://private-user-images.githubusercontent.com/134294462/572672039-15d1d1b4-b47e-4810-9b17-b323a1e10d46.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjY0NDcsIm5iZiI6MTc3NTA2NjE0NywicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjcyMDM5LTE1ZDFkMWI0LWI0N2UtNDgxMC05YjE3LWIzMjNhMWUxMGQ0Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxNzU1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MTc3NGUyNWMyMjNkNWQ3OGVjYjg5YjZlZGZhYTQyMzBkMzRkMGMzMzVhMDYzNDI5OWExMThjOTZjNTMzY2FlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.y5YJ7NWy8TFWYMpCL44ECbDv9lQNk4FtRCsMyxcu8mc)
 
 #### 3.3.5 Consulta de Receitas
 Permite ao usuário buscar receitas específicas por meio de palavras-chave, tornando a navegação mais rápida e eficiente.
 
+![Consultas por caixa de pesquisa](https://private-user-images.githubusercontent.com/134294462/572672041-e12e3586-d282-44d2-a924-94757b76640a.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjY0NDcsIm5iZiI6MTc3NTA2NjE0NywicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjcyMDQxLWUxMmUzNTg2LWQyODItNDRkMi1hOTI0LTk0NzU3Yjc2NjQwYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxNzU1NDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04OWFjN2I4YzY1NDhhNzg0MzA4OTY2MDg3ZGY1YzEzNTEyZjQzYzU1MWYwOGViMDk2ZGI3MjcxM2Q5Y2Y5Zjg1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UioHnAtG2XrH7-qC3lVE9AI-dQGrUq-oHELLcsA3KYY)
+
 #### 3.3.6 Adição de Receitas
 Funcionalidade que possibilita ao usuário cadastrar uma nova receita, informando título, ingredientes e modo de preparo.
 
----
+![Consultas por caixa de pesquisa](https://private-user-images.githubusercontent.com/134294462/572672040-abf7d388-c28c-4bcf-ba96-7b696a965e3b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzUwNjY3OTUsIm5iZiI6MTc3NTA2NjQ5NSwicGF0aCI6Ii8xMzQyOTQ0NjIvNTcyNjcyMDQwLWFiZjdkMzg4LWMyOGMtNGJjZi1iYTk2LTdiNjk2YTk2NWUzYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDQwMVQxODAxMzVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02M2JkMzUxYWNiMzdjN2I2M2Q4NTliZTEyNWRiMjdkNjJlMTI1ZDhkMDc2YWFmYTZlYjRiYzVmMjc3YjZkYmNhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.y5BFdJicrTZnjeF3cfxhq2dpmyfwI3dEJHhW9AILmAo)
+
+ ---
 
 ## Autores do Projeto
 * Gustav Victor Silva Ribeiro

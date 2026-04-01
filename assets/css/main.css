@@ -1,0 +1,84 @@
+/* HEADER */
+.header {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo h1 {
+  font-size: 22px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* BOTÃO MENU */
+.nav__item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.nav__item:hover {
+  background: #64cd87;
+  color: #fff;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  display: none;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+/* ITENS DROPDOWN */
+.dropdown__menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown__menu a:hover {
+  background: #64cd87;
+  color: #fff;
+}
+
+/* ATIVAÇÃO */
+.dropdown:hover .dropdown__menu {
+  display: block;
+}

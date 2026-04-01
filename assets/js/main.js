@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container = document.querySelector(".cards");
 
-  /* ================= CARDS ================= */
   const receitas = armazenamentoAPI.getAll();
 
   receitas.forEach(r => {
@@ -20,8 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="card-actions">
           <button class="btn">Modo de preparo</button>
-          <button class="btn btn-fav">
-            ${isFav ? "Remover" : "Favoritar ❤"}
+
+          <button class="btn btn-fav ${isFav ? "active" : ""}">
+            Favoritar
+            <i class="ri-heart-${isFav ? "fill" : "line"}"></i>
           </button>
         </div>
       </div>
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(card);
   });
 
-  /* ================= FAVORITOS ================= */
+  /* FAVORITOS */
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-fav");
     if (!btn) return;
@@ -40,23 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const ativo = armazenamentoAPI.toggleFavorito(id);
 
-    btn.textContent = ativo
-      ? "Remover"
-      : "Favoritar ❤";
+    btn.classList.toggle("active", ativo);
+
+    const icon = btn.querySelector("i");
+    icon.className = ativo ? "ri-heart-fill" : "ri-heart-line";
   });
 
-  /* ================= DARK MODE ================= */
+  /* DARK MODE */
   const toggle = document.querySelector(".dark-toggle");
   const icon = toggle.querySelector("i");
 
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
-
-    if (document.body.classList.contains("dark-theme")) {
-      icon.classList.replace("ri-moon-line", "ri-sun-line");
-    } else {
-      icon.classList.replace("ri-sun-line", "ri-moon-line");
-    }
+    icon.classList.toggle("ri-moon-line");
+    icon.classList.toggle("ri-sun-line");
   });
 
 });

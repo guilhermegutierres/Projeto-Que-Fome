@@ -23,6 +23,24 @@ const armazenamentoAPI = (() => {
         titulo: "Macarrão",
         descricao: "Clássico rápido e saboroso",
         imagem: "assets/imagens/macarrao.jpg"
+      },
+      {
+        id: "4",
+        titulo: "Mousse de Limão",
+        descricao: "Leve, cremoso e refrescante",
+        imagem: "assets/imagens/moussedelimao.jpg"
+      },
+      {
+        id: "5",
+        titulo: "Bolo de Morango",
+        descricao: "Doce e perfeito para sobremesas",
+        imagem: "assets/imagens/bolodemorango.jpg"
+      },
+      {
+        id: "6",
+        titulo: "Pão Francês",
+        descricao: "Clássico crocante do café da manhã",
+        imagem: "assets/imagens/paofrances.jpg"
       }
     ];
 

@@ -1,4 +1,4 @@
-/* ================= RESET BÁSICO ================= */
+/* ================= RESET ================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,7 +15,6 @@ header {
   max-width: 1200px;
 }
 
-/* CONTAINER DO HEADER */
 .container {
   display: flex;
   align-items: center;
@@ -23,12 +22,17 @@ header {
 }
 
 /* ================= LOGO ================= */
-.logo {
+.logo a {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.logo span {
+  font-size: 22px;
   font-weight: bold;
-  font-size: 20px;
 }
 
 /* ================= NAVBAR ================= */
@@ -37,7 +41,6 @@ header {
   gap: 25px;
 }
 
-/* LINKS DO MENU */
 .navbar a {
   text-decoration: none;
   color: #333;
@@ -54,21 +57,27 @@ header {
   position: relative;
 }
 
-/* MENU QUE ABRE */
+/* BOTÃO */
+.dropdown > a {
+  padding: 6px 8px;
+  display: inline-block;
+}
+
+/* MENU */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 30px;
+  top: 100%; /* corrigido (remove bug do sumiço) */
   left: 0;
   background: #fff;
   border-radius: 10px;
   padding: 8px 0;
   min-width: 180px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  z-index: 10;
+  z-index: 999;
 }
 
-/* ITENS DO DROPDOWN */
+/* ITENS */
 .dropdown-content a {
   display: block;
   padding: 10px 15px;
@@ -80,8 +89,9 @@ header {
   color: #fff;
 }
 
-/* MOSTRAR DROPDOWN */
-.dropdown:hover .dropdown-content {
+/* FIX DO BUG (IMPORTANTE) */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
   display: block;
 }
 
@@ -92,7 +102,6 @@ header {
   gap: 12px;
 }
 
-/* BUSCA */
 .search {
   position: relative;
 }
@@ -111,7 +120,6 @@ header {
   color: #555;
 }
 
-/* BOTÕES */
 .dark-toggle,
 .fav-icon {
   cursor: pointer;
@@ -120,61 +128,73 @@ header {
 
 /* ================= CARDS ================= */
 .container_card {
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* GRID MODERNO */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 /* CARD */
 .card {
-  background: #dcdcdc;
-  padding: 15px;
+  background: #fff;
   border-radius: 14px;
-  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s;
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-direction: column;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* IMAGEM */
 .card img {
-  width: 140px;
-  height: 100px;
+  width: 100%;
+  height: 160px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-/* TEXTO */
+/* CONTEÚDO */
+.card div {
+  padding: 15px;
+}
+
 .card h2 {
-  margin: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .card p {
-  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
 }
 
 /* AÇÕES */
 .card-actions {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
 }
 
 /* BOTÕES */
 .btn {
   background: #64cd87;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 20px;
   color: white;
+  font-size: 13px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.btn:hover {
-  opacity: 0.8;
-}
-
-/* BOTÃO FAVORITO */
 .btn-fav {
   background: #ff6b6b;
 }
@@ -185,47 +205,31 @@ header {
   color: #fff;
 }
 
-/* HEADER DARK */
 .dark-theme header {
   background: #1e1e1e;
 }
 
-/* LINKS */
 .dark-theme .navbar a {
   color: #fff;
 }
 
-/* DROPDOWN */
 .dark-theme .dropdown-content {
   background: #2a2a2a;
 }
 
-/* INPUT */
 .dark-theme .search input {
   background: #333;
   color: #fff;
 }
 
-/* CARDS */
 .dark-theme .card {
   background: #2a2a2a;
 }
 
-/* ================= LOGO ================= */
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #333;
+.dark-theme .card p {
+  color: #ccc;
 }
 
-.logo span {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* DARK MODE LOGO */
 .dark-theme .logo span {
   color: #fff;
 }

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="card-actions">
           <button class="btn">Modo de preparo</button>
           <button class="btn btn-fav">
-            ${isFav ? "Remover dos Favoritos" : "Favoritar ❤"}
+            ${isFav ? "Remover" : "Favoritar ❤"}
           </button>
         </div>
       </div>
@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(card);
   });
-
 
   /* ================= FAVORITOS ================= */
   container.addEventListener("click", (e) => {
@@ -42,10 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const ativo = armazenamentoAPI.toggleFavorito(id);
 
     btn.textContent = ativo
-      ? "Remover dos Favoritos"
+      ? "Remover"
       : "Favoritar ❤";
   });
-
 
   /* ================= DARK MODE ================= */
   const toggle = document.querySelector(".dark-toggle");
@@ -59,12 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       icon.classList.replace("ri-sun-line", "ri-moon-line");
     }
-  });
-
-
-  /* ================= CURSOR ================= */
-  document.querySelectorAll("button, a, .dark-toggle").forEach(el => {
-    el.style.cursor = "pointer";
   });
 
 });

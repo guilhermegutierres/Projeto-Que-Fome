@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
   const container = document.querySelector(".cards");
 
   /* ================= CARREGAR JSON ================= */
   const response = await fetch("assets/data/receitas.json");
   const receitas = await response.json();
 
-  receitas.forEach(r => {
+  receitas.forEach((r) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.id = r.id;
@@ -24,7 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           <button class="btn btn-fav ${isFav ? "active" : ""}">
             ${isFav ? "Desfavoritar" : "Favoritar"}
-            <span class="heart">${isFav ? "❤" : "♡"}</span>
+            <span class="heart">
+          <i class="ri-heart-line"></i>
+            </span>
           </button>
         </div>
       </div>
@@ -46,28 +47,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     btn.classList.toggle("active", isFav);
 
     const heart = btn.querySelector(".heart");
+    const icon = heart.querySelector("i");
 
     if (isFav) {
       btn.childNodes[0].nodeValue = "Desfavoritar ";
-      heart.textContent = "❤";
+      icon.style.color = "#fff";
     } else {
       btn.childNodes[0].nodeValue = "Favoritar ";
-      heart.textContent = "♡";
+      icon.style.color = "#ff6b6b";
     }
   });
 
   /* ================= DARK MODE ================= */
   const toggle = document.querySelector(".dark-toggle");
-  const icon = toggle.querySelector("i");
+  const iconDark = toggle.querySelector("i");
 
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
     if (document.body.classList.contains("dark-theme")) {
-      icon.classList.replace("ri-moon-line", "ri-sun-line");
+      iconDark.classList.replace("ri-moon-line", "ri-sun-line");
     } else {
-      icon.classList.replace("ri-sun-line", "ri-moon-line");
+      iconDark.classList.replace("ri-sun-line", "ri-moon-line");
     }
   });
-
 });

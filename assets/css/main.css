@@ -1,7 +1,7 @@
 /* ================= RESET ================= */
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   background: #f3f2f1;
   color: #2b2b2b;
 }
@@ -70,7 +70,7 @@ header {
   border-radius: 10px;
   padding: 6px;
   min-width: 180px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
@@ -121,18 +121,24 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 22px;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 
 .card {
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
@@ -141,8 +147,12 @@ header {
   object-fit: cover;
 }
 
-.card div {
+.card > div {
   padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card h2 {
@@ -163,7 +173,10 @@ header {
 .card-actions {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-top: auto;
+  align-items: center;
+  padding-top: 6px;
 }
 
 /* BASE */
@@ -212,6 +225,12 @@ header {
   background: #ff6b6b;
   color: #fff;
   border: none;
+}
+/* coração */
+.heart i {
+  font-size: 14px;
+  color: #ff6b6b;
+  transition: 0.2s;
 }
 
 /* ================= DARK MODE ================= */

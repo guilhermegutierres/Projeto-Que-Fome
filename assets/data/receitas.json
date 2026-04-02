@@ -2,37 +2,37 @@
   {
     "id": "1",
     "titulo": "Torta de Frango",
-    "descricao": "Receita prática e deliciosa",
+    "descricao": "A torta de frango de liquidificador é a representação perfeita de uma receita prática, deliciosa e que conquista pelo sabor.",
     "imagem": "assets/imagens/tortadefrango.jpg"
   },
   {
     "id": "2",
     "titulo": "Carne Assada",
-    "descricao": "Suculenta e perfeita",
+    "descricao": "Uma carne assada suculenta e saborosa, perfeita para almoços em família nos finais de semana.",
     "imagem": "assets/imagens/carneassada.jpg"
   },
   {
     "id": "3",
-    "titulo": "Macarrão",
-    "descricao": "Clássico rápido e saboroso",
+    "titulo": "Macarrão alho e óleo",
+    "descricao": "Macarrão alho e óleo, um clássico da culinária brasileira, rápido e saboroso.",
     "imagem": "assets/imagens/macarrao.jpg"
   },
   {
     "id": "4",
     "titulo": "Mousse de Limão",
-    "descricao": "Leve, cremoso e refrescante",
+    "descricao": "Um mousse de limão refrescante e cremoso, perfeito para os dias quentes.",
     "imagem": "assets/imagens/moussedelimao.jpg"
   },
   {
     "id": "5",
     "titulo": "Bolo de Morango",
-    "descricao": "Doce e perfeito para sobremesas",
+    "descricao": "Bolo fofinho e úmido com pedaços de morango, uma delícia para qualquer ocasião.",
     "imagem": "assets/imagens/bolodemorango.jpg"
   },
   {
     "id": "6",
     "titulo": "Pão Francês",
-    "descricao": "Clássico crocante do café da manhã",
+    "descricao": "Pão francês caseiro, crocante por fora e macio por dentro.",
     "imagem": "assets/imagens/paofrances.jpg"
   }
 ]

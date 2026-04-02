@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   container.innerHTML = "";
 
   if (receitasFavoritas.length === 0) {
-    container.innerHTML = "<h2 style='text-align:center;'>Nenhum favorito ainda 😢</h2>";
+    container.innerHTML = "<h2 style='text-align:center;'>Nenhum favorito ainda...</h2>";
     return;
   }
 

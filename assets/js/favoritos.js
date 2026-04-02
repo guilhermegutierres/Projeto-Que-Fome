@@ -69,4 +69,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     location.reload();
   });
 
+  /* ================= DARK MODE ================= */
+const toggle = document.querySelector(".dark-toggle");
+
+if (toggle) {
+  const icon = toggle.querySelector("i");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) {
+      icon.classList.replace("ri-moon-line", "ri-sun-line");
+    } else {
+      icon.classList.replace("ri-sun-line", "ri-moon-line");
+    }
+  });
+}
+
 });

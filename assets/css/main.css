@@ -35,7 +35,7 @@ header {
   font-weight: 700;
 }
 
-/* FIX DARK MODE LOGO */
+/* DARK MODE LOGO */
 .dark-theme .logo span {
   color: #fff;
 }
@@ -151,28 +151,30 @@ header {
   margin-bottom: 6px;
 }
 
+/* DESCRIÇÃO MELHORADA */
 .card p {
-  font-size: 14.5px; /* maior */
-  color: #666;
+  font-size: 15px;
+  color: #555;
   margin-bottom: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ================= BOTÕES ================= */
 .card-actions {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* BASE */
 .btn {
   border: none;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
-  white-space: nowrap; /* evita quebrar linha */
+  white-space: nowrap;
 }
 
 /* MODO DE PREPARO */
@@ -185,7 +187,7 @@ header {
   background: #4dbf75;
 }
 
-/* FAVORITO (REFINADO) */
+/* FAVORITO */
 .btn-fav {
   background: #fff;
   border: 1.5px solid #ff6b6b;

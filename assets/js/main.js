@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const response = await fetch("assets/data/receitas.json");
   const receitas = await response.json();
 
-  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
   receitas.forEach(r => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.id = r.id;
 
-    const isFav = favoritos.includes(r.id);
+    const isFav = armazenamentoAPI.isFavorito(r.id);
 
     card.innerHTML = `
       <img src="${r.imagem}">
@@ -43,21 +41,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const card = btn.closest(".card");
     const id = card.dataset.id;
 
-    let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const isFav = armazenamentoAPI.toggleFavorito(id);
+
+    btn.classList.toggle("active", isFav);
 
     const heart = btn.querySelector(".heart");
 
-    if (favs.includes(id)) {
-      favs = favs.filter(f => f !== id);
-      btn.classList.remove("active");
-      btn.innerHTML = `Favoritar <span class="heart">♡</span>`;
+    if (isFav) {
+      btn.childNodes[0].nodeValue = "Desfavoritar ";
+      heart.textContent = "❤";
     } else {
-      favs.push(id);
-      btn.classList.add("active");
-      btn.innerHTML = `Desfavoritar <span class="heart">❤</span>`;
+      btn.childNodes[0].nodeValue = "Favoritar ";
+      heart.textContent = "♡";
     }
-
-    localStorage.setItem("favoritos", JSON.stringify(favs));
   });
 
   /* ================= DARK MODE ================= */

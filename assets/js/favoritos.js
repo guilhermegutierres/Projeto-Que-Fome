@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
   const container = document.querySelector(".cards");
 
   /* ================= CARREGAR JSON ================= */
@@ -9,18 +8,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   /* ================= FILTRAR FAVORITOS ================= */
-  const receitasFavoritas = receitas.filter(r =>
-    favoritos.includes(r.id)
-  );
+  const receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
 
   container.innerHTML = "";
 
   if (receitasFavoritas.length === 0) {
-    container.innerHTML = "<h2 style='text-align:center;'>Nenhum favorito ainda...</h2>";
+    container.innerHTML =
+      "<h2 style='text-align:center;'>Nenhum favorito ainda...</h2>";
     return;
   }
 
-  receitasFavoritas.forEach(r => {
+  receitasFavoritas.forEach((r) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.dataset.id = r.id;
@@ -38,7 +36,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           <button class="btn btn-fav ${isFav ? "active" : ""}">
             ${isFav ? "Desfavoritar" : "Favoritar"}
-            <span class="heart">${isFav ? "❤" : "♡"}</span>
+            <span class="heart">
+              <i class="ri-heart-line"></i>
+            </span>
           </button>
         </div>
       </div>
@@ -58,32 +58,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     if (favs.includes(id)) {
-      favs = favs.filter(f => f !== id);
+      favs = favs.filter((f) => f !== id);
     } else {
       favs.push(id);
     }
 
     localStorage.setItem("favoritos", JSON.stringify(favs));
 
-    // 🔥 Re-renderiza a tela
+    // Re-renderiza a tela
     location.reload();
   });
 
   /* ================= DARK MODE ================= */
-const toggle = document.querySelector(".dark-toggle");
+  const toggle = document.querySelector(".dark-toggle");
 
-if (toggle) {
-  const icon = toggle.querySelector("i");
+  if (toggle) {
+    const icon = toggle.querySelector("i");
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
 
-    if (document.body.classList.contains("dark-theme")) {
-      icon.classList.replace("ri-moon-line", "ri-sun-line");
-    } else {
-      icon.classList.replace("ri-sun-line", "ri-moon-line");
-    }
-  });
-}
-
+      if (document.body.classList.contains("dark-theme")) {
+        icon.classList.replace("ri-moon-line", "ri-sun-line");
+      } else {
+        icon.classList.replace("ri-sun-line", "ri-moon-line");
+      }
+    });
+  }
 });

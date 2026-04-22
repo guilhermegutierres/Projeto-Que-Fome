@@ -1,66 +1,162 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
-  background: #f3f2f1;
+  font-family: "Nunito", sans-serif;
+
+  background: linear-gradient(135deg, #f3f2f1, #dff5e6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 20px;
 }
 
+/* ================= BOTÃO VOLTAR ================= */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: #64cd87;
+  transform: translateY(-1px);
+}
+
+/* ================= CONTAINER ================= */
 .auth-container {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
+/* ================= CARD ================= */
 .auth-box {
-  background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  width: 320px;
+  background: #ffffff;
+
+  /* 🔥 MAIS ALTURA + RESPIRO */
+  padding: 50px 44px;
+
+  border-radius: 22px;
+
+  /* 🔥 MAIS LARGO */
+  width: 100%;
+  max-width: 560px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0,0,0,0.05);
+
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  animation: fade 0.4s ease;
 }
 
+/* ================= TÍTULOS ================= */
 .auth-box h1 {
   color: #64cd87;
   margin-bottom: 10px;
+  font-size: 30px;
 }
 
 .auth-box h2 {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  font-size: 20px;
 }
 
+/* ================= INPUTS ================= */
 .auth-box input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+
+  border-radius: 12px;
   border: 1px solid #ddd;
-  font-size: 14px;
+
+  font-size: 15px;
+  background: #fafafa;
+
+  transition: 0.2s;
 }
 
+.auth-box input:focus {
+  outline: none;
+  border-color: #64cd87;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(100, 205, 135, 0.15);
+}
+
+/* ================= BOTÃO ================= */
 .auth-box button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
+
+  margin-top: 14px;
+  margin-bottom: 22px;
+
+  background: linear-gradient(135deg, #64cd87, #57c97c);
+
   border: none;
   border-radius: 999px;
-  background: #64cd87;
+
   color: #fff;
   font-weight: 600;
+  font-size: 15px;
+
   cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .auth-box button:hover {
-  background: #4dbf75;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(100, 205, 135, 0.4);
 }
 
-.links {
-  margin-top: 15px;
+/* ================= FOOTER ================= */
+.auth-footer {
   display: flex;
   justify-content: space-between;
+
+  font-size: 14px;
+  color: #666;
 }
 
-.links a {
-  font-size: 13px;
-  color: #555;
+.auth-footer a {
   text-decoration: none;
+  color: #666;
+}
+
+.auth-footer a:hover {
+  color: #64cd87;
+}
+
+/* ================= ANIMAÇÃO ================= */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

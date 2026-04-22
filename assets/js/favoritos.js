@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
       </div>
     `;
+    const btnModoPreparo = card.querySelector(".btn");
+
+    btnModoPreparo.addEventListener("click", () => {
+      window.location.href = `receita.html?id=${r.id}`;
+    });
 
     container.appendChild(card);
   });

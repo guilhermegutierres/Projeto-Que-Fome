@@ -3,36 +3,252 @@
     "id": "1",
     "titulo": "Torta de Frango",
     "descricao": "A torta de frango de liquidificador é a representação perfeita de uma receita prática, deliciosa e que conquista pelo sabor.",
-    "imagem": "assets/imagens/tortadefrango.jpg"
+    "descricaoCompleta": "Essa receita de torta de frango de liquidificador é deliciosa e muito prática para o dia a dia. Além de ser perfeita para levar para a festa junina da família. Não à toa, é uma das nossa campeãs de acessos. Por ser feita no liquidificador, a massa é líquida e a montagem é diferente de uma torta de frango tradicional. Você deve despejar metade dela na forma untada, adicionar o recheio e cobri-lo com o restante da massa. Se quiser, adicione um pouco de queijo ralado em cima para gratinar no forno antes de cozinhar. A torta de frango com massa de liquidificador é muito mais prática de fazer do que um empadão, por exemplo, já que você não precisa misturar farinha e manteiga, abrir a massa e cobrir a forma manualmente. Se você busca praticidade, essa é a receita ideal! Aprenda agora mesmo a fazer essa torta de frango simples e fácil!",
+    "imagem": "assets/imagens/tortadefrango.jpg",
+    "video": "https://www.youtube.com/embed/QYm0HkdFN_c",
+    "tempo": "40 min",
+    "dificuldade": "Médio",
+    "custo": "Médio",
+
+    "ingredientes": {
+      "Recheio:": [
+        "500 g de peito de frango sem pele",
+        "4 colheres (sopa) de óleo",
+        "1 cebola picada",
+        "1 xícara (chá) de ervilhas",
+        "pimenta-do-reino a gosto",
+        "1/2 litro de caldo de galinha",
+        "1 dente de alho amassado",
+        "3 tomates sem pele e sem sementes",
+        "sal a gosto"
+      ],
+      "Massa:": [
+        "250 ml de leite",
+        "2 ovos",
+        "sal a gosto",
+        "queijo ralado a gosto",
+        "3/4 de xícara (chá) de óleo",
+        "1 e 1/2 xícara (chá) de farinha de trigo",
+        "1 colher (sopa) de fermento em pó"
+      ]
+    },
+
+    "modo_preparo": {
+      "Recheio:": [
+        "Cozinhe o peito de frango no caldo até ficar macio.",
+        "Separe 1 xícara (chá) de caldo do cozimento e reserve.",
+        "Refogue os demais ingredientes e acrescente as ervilhas por último.",
+        "Desfie o frango, misture ao caldo e deixe cozinhar até secar."
+      ],
+      "Massa:": [
+        "Bata o leite, o óleo e os ovos no liquidificador em velocidade baixa.",
+        "Acrescente aos poucos a farinha, o sal e o fermento.",
+        "Despeje metade da massa em uma forma untada e adicione o recheio sobre ela.",
+        "Cubra com o restante de massa e o queijo ralado.",
+        "Leve ao forno preaquecido (180° C) até dourar."
+      ]
+    }
   },
+
   {
     "id": "2",
     "titulo": "Carne Assada",
-    "descricao": "Uma carne assada suculenta e saborosa, perfeita para almoços em família nos finais de semana.",
-    "imagem": "assets/imagens/carneassada.jpg"
+    "descricao": "Uma carne assada suculenta e bem temperada, perfeita para almoços em família e ocasiões especiais.",
+    "descricaoCompleta": "A carne assada na panela de pressão é uma receita prática, suculenta e cheia de sabor, perfeita para quem busca uma refeição deliciosa sem precisar passar horas na cozinha. A panela de pressão acelera o cozimento, deixando a carne extremamente macia e bem temperada em pouco tempo. O segredo está na combinação de temperos e no tempo de cozimento ideal, que garante um resultado irresistível. Além de ser uma ótima opção para o dia a dia, essa receita também é perfeita para um almoço em família ou até mesmo um jantar especial. O molho que se forma durante o preparo fica encorpado e cheio de sabor, ideal para acompanhar arroz, batatas ou legumes. Você também pode adaptar os temperos ao seu gosto, adicionando ervas frescas ou especiarias. Essa carne assada vai encantar a todos com sua textura macia, sabor marcante e facilidade de preparo. Uma receita simples, mas que entrega um resultado digno de restaurante!",
+    "imagem": "assets/imagens/carneassada.jpg",
+    "video": "https://www.youtube.com/embed/8e_Hot_6TLw?si=AJqc-iH68aK50ilr",
+    "tempo": "1h 30min",
+    "dificuldade": "Fácil",
+    "custo": "médio",
+
+    "ingredientes": {
+      "Carne:": [
+        "1 kg de miolo de acém",
+        "2 colheres (sopa) de vinagre",
+        "4 dentes de alho",
+        "cominho a gosto",
+        "cominho a gosto",
+        "sal a gosto",
+        "1 colher (sopa) de óleo",
+        "2 folhas de louro",
+        "1 cebola picadinha",
+        "5 colheres (sopa) de shoyu",
+        "pimenta branca a gosto",
+        "noz-moscada a gosto"
+      ]
+    },
+
+    "modo_preparo": {
+      "Carne:": [
+        "Em um recipiente, misture todos os temperos, acrescente a carne e deixe marinar por 30 minutos.",
+        "Aqueça a panela de pressão, acrescente o óleo, a carne com o molho do tempero e tampe a panela.",
+        "Quando a panela atingir a pressão, abaixe o fogo e deixe cozinhar por 1 hora.",
+        "Está pronto para servir!"
+      ]
+    }
   },
+
   {
     "id": "3",
     "titulo": "Macarrão alho e óleo",
-    "descricao": "Macarrão alho e óleo, um clássico da culinária brasileira, rápido e saboroso.",
-    "imagem": "assets/imagens/macarrao.jpg"
+    "descricao": "Macarrão alho e óleo, um clássico simples e saboroso, com alho dourado que traz um aroma irresistível.",
+    "descricaoCompleta": "Aquela receita simples e prática que todo mundo ama: macarrão ao alho e óleo! Esse clássico da culinária é perfeito para quem busca uma refeição rápida, saborosa e feita com poucos ingredientes. O grande destaque do prato está no alho dourado no ponto certo, que libera um aroma irresistível e garante um sabor marcante e equilibrado. Apesar de ser uma receita fácil, alguns detalhes fazem toda a diferença no resultado final, como a escolha de um bom azeite e o cuidado ao dourar o alho sem queimar. O macarrão deve estar no ponto ideal, bem soltinho, para absorver o sabor do tempero e ficar ainda mais delicioso. Versátil e econômico, o macarrão ao alho e óleo pode ser servido sozinho ou acompanhado de carnes, frango ou saladas, sendo uma ótima opção tanto para o dia a dia quanto para momentos especiais. Veja agora mesmo como preparar essa massa clássica que conquista todo mundo!",
+    "imagem": "assets/imagens/macarrao.jpg",
+    "video": "https://www.youtube.com/embed/Rm5hV1wWyKQ?si=1-A3EuGQBGDYHI6p",
+    "tempo": "30 min",
+    "dificuldade": "Muito fácil",
+    "custo": "Baixo",
+
+    "ingredientes": {
+      "Ingredientes (10 porções)": [
+        "5 dentes de alho amassados",
+        "1 colher de sopa de manteiga",
+        "5 colheres de sopa de óleo",
+        "Sal a gosto"
+      ]
+    },
+
+    "modo_preparo": {
+      "Massa:": [
+        "Amasse bem o alho juntamente com o sal, formando uma pasta.",
+        "Em uma frigideira, coloque o alho amassado e o óleo.",
+        "Frite em fogo médio sem deixar o alho queimar, só dourar.",
+        "Acrescente a manteiga e deixe ferver um pouco, só para incorporar bem o sabor, mexendo sempre.",
+        "Coloque sobre o macarrão imediatamente."
+      ]
+    }
   },
+
   {
     "id": "4",
     "titulo": "Mousse de Limão",
-    "descricao": "Um mousse de limão refrescante e cremoso, perfeito para os dias quentes.",
-    "imagem": "assets/imagens/moussedelimao.jpg"
+    "descricao": "Um mousse de limão refrescante e cremoso, com equilíbrio perfeito entre o doce e o azedinho.",
+    "descricaoCompleta": "Se você está procurando uma receita de mousse de limão rápida e fácil, veio ao lugar certo! A mousse de limão é uma delícia cremosa, refrescante e ácida na medida certa para se tornar uma sobremesa irresistível. A receita de mousse de limão simples pede apenas 4 ingredientes. O leite condensado, o creme de leite e o suco de limão natural são batidos no liquidificador até se transformarem no creme da mousse. Depois de algumas horas na geladeira, ele fica no ponto certo para comer. Para finalizar esse doce de mousse de limão rápido, em vez das tradicionais raspas de limão, você pode colocar Bis de limão triturado para dar um toque crocante a essa sobremesa leve. Para quem quer uma sobremesa rápida e fácil, não tem receita mais simples do que essa. Como fazer mousse de limão tem poucos passos, até quem está começando na cozinha consegue fazer esse preparo!",
+    "imagem": "assets/imagens/moussedelimao.jpg",
+    "video": "https://www.youtube.com/embed/4ELOqMupksA?si=c-U9BrDisgmeAavF",
+    "tempo": "10 min",
+    "dificuldade": "Muito fácil",
+    "custo": "Baixo",
+
+    "ingredientes": {
+      "Ingredientes (8 porções)": [
+        "1 lata de leite condensado",
+        "1/2 copo (americano) de suco puro de limão",
+        "1 lata de creme de leite",
+        "Bis de limão"
+      ]
+    },
+
+    "modo_preparo": {
+      "Mousse de limão:": [
+        "No liquidificador, bata o leite condensado e o creme de leite por 3 minutos.",
+        "Acrescente aos poucos o suco de limão e continue batendo.",
+        "Despeje o mousse em um refratário e leve à geladeira.",
+        "Na hora de servir, triture o bis e coloque por cima do mousse para decorar."
+      ]
+    }
   },
+
   {
     "id": "5",
     "titulo": "Bolo de Morango",
-    "descricao": "Bolo fofinho e úmido com pedaços de morango, uma delícia para qualquer ocasião.",
-    "imagem": "assets/imagens/bolodemorango.jpg"
+    "descricao": "Bolo fofinho e úmido com pedaços de morango, perfeito para sobremesas e momentos especiais.",
+    "descricaoCompleta": "O bolo de morango é uma sobremesa clássica, delicada e cheia de sabor, perfeita para qualquer ocasião especial ou até mesmo para adoçar o dia a dia. Com uma massa macia e fofinha combinada com o frescor dos morangos, essa receita conquista pelo equilíbrio entre o doce e o levemente ácido da fruta. O segredo está na qualidade dos ingredientes e no cuidado no preparo, garantindo um bolo úmido e saboroso. Além disso, pode ser incrementado com recheios, coberturas ou chantilly, deixando a apresentação ainda mais bonita e irresistível. Seja para um aniversário, café da tarde ou comemoração em família, o bolo de morango é sempre uma escolha certeira que agrada a todos e transforma qualquer momento em algo especial.",
+    "imagem": "assets/imagens/bolodemorango.jpg",
+    "video": "https://www.youtube.com/embed/XzsiPN1sOiY",
+    "tempo": "1h 30min",
+    "dificuldade": "Médio",
+    "custo": "Médio",
+
+    "ingredientes": {
+      "Pão de ló:": [
+        "5 ovos",
+        "2 xícaras (chá) de açúcar",
+        "2 xícaras (chá) de farinha de trigo",
+        "1 xícara (chá) de leite quente",
+        "1 colher (sopa) de fermento em pó"
+      ],
+      "Recheio:": [
+        "1/2 litro de leite",
+        "1 lata de leite condensado",
+        "1 lata de creme de leite",
+        "3 gemas",
+        "3 colheres de amido de milho",
+        "2 caixinhas de morango"
+      ],
+      "Cobertura:": ["2 caixinhas de chantilly", "1 caixinha de morango"]
+    },
+
+    "modo_preparo": {
+      "Pão de ló:": [
+        "Bata as claras em neve e adicione as gemas uma a uma, continuando a bater.",
+        "Adicione o açúcar e bata mais um pouco.",
+        "Misture a farinha peneirada e o leite quente, mexendo sem bater.",
+        "Por último, adicione o fermento.",
+        "Asse em forma untada em forno médio por cerca de 30 minutos."
+      ],
+      "Recheio:": [
+        "Aqueça o leite em uma panela.",
+        "Adicione as gemas, o leite condensado e o amido de milho.",
+        "Mexa até engrossar.",
+        "Retire do fogo e misture o creme de leite."
+      ],
+      "Montagem:": [
+        "Desenforme o bolo ainda morno.",
+        "Corte ao meio com uma faca.",
+        "Amasse alguns morangos com açúcar e água para fazer uma calda.",
+        "Regue o bolo com a calda.",
+        "Adicione o recheio e morangos picados.",
+        "Cubra com a outra metade do bolo."
+      ],
+      "Cobertura:": [
+        "Bata o chantilly até ficar firme.",
+        "Cubra o bolo.",
+        "Decore com morangos."
+      ]
+    }
   },
+
   {
     "id": "6",
-    "titulo": "Pão Francês",
-    "descricao": "Pão francês caseiro, crocante por fora e macio por dentro.",
-    "imagem": "assets/imagens/paofrances.jpg"
+    "titulo": "Pudim de Leite Condensado",
+    "descricao": "Pudim cremoso, lisinho e com uma deliciosa calda de caramelo, perfeito para qualquer ocasião.",
+    "descricaoCompleta": "Veja como fazer essa receita de pudim de leite condensado lisinho e com uma calda perfeita de caramelo. Ele é delicioso, barato e bem rápido de preparar! Com sua textura macia e sabor inconfundível, esse doce é uma verdadeira tentação para os amantes de sobremesas tradicionais. Fácil de preparar e com ingredientes simples, o pudim é uma opção perfeita para adoçar qualquer ocasião especial. Com um modo de preparo bem simples, envolvendo poucos ingredientes como leite condensado, leite, ovos e açúcar para a calda, você irá criar uma sobremesa que certamente vai encantar a todos os paladares. Surpreenda sua família e amigos com esse clássico da culinária, que além de delicioso, possui uma apresentação encantadora. Siga o passo a passo desta receita e mergulhe nessa experiência de sabores que certamente vai conquistar a todos.",
+    "imagem": "assets/imagens/pudim.jpg",
+    "video": "https://www.youtube.com/embed/9MzwFXKcX18?si=vuDVBs8HsS66EoLA",
+    "tempo": "50min",
+    "dificuldade": "Fácil",
+    "custo": "Baixo",
+
+    "ingredientes": {
+      "Pudim": [
+        "1 lata de leite condensado",
+        "1 lata de leite (medida da lata)",
+        "3 ovos inteiros"
+      ],
+      "Calda": ["1 xícara (chá) de açúcar", "1/2 xícara de água"]
+    },
+
+    "modo_preparo": {
+      "Pudim:": [
+        "Bata bem os ovos no liquidificador.",
+        "Acrescente o leite condensado e o leite.",
+        "Bata novamente até ficar homogêneo."
+      ],
+      "Calda:": [
+        "Derreta o açúcar na panela até ficar dourado.",
+        "Adicione a água com cuidado.",
+        "Deixe engrossar até formar uma calda."
+      ],
+      "Montagem:": [
+        "Despeje a calda em uma forma redonda.",
+        "Adicione a mistura do pudim por cima."
+      ],
+      "Assar:": [
+        "Leve ao forno médio por 45 minutos em banho-maria.",
+        "Espete um garfo para verificar se está firme.",
+        "Deixe esfriar, leve à geladeira e desenforme."
+      ]
+    }
   }
 ]

@@ -1,0 +1,132 @@
+body {
+  background: #f3f3f3;
+  font-family: "Nunito", sans-serif;
+}
+
+/* CONTAINER PRINCIPAL */
+.container_receita {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* TÍTULO */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* VÍDEO */
+.video iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+}
+
+/* INFO (TEMPO / DIFICULDADE / CUSTO) */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  font-size: 20px;
+  flex-wrap: wrap;
+}
+
+.info p {
+  flex: 1;
+  text-align: center;
+}
+
+.info p:first-child {
+  text-align: left;
+}
+
+.info p:last-child {
+  text-align: right;
+}
+
+/* DESCRIÇÃO */
+.descricao {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 40px; /* ⬅️ aumentei */
+  text-align: justify;
+}
+
+/* TÍTULOS */
+h2 {
+  font-size: 26px;
+  margin: 50px 0 20px; /* ⬅️ mais espaço antes do modo de preparo */
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 25px 0 10px; /* ⬅️ mais espaço entre seções */
+  text-align: center;
+}
+
+/* INGREDIENTES */
+.ingredientes-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* ⬅️ mais espaço entre Recheio e Massa */
+  margin-top: 40px; /* ⬅️ mais espaço da descrição */
+  margin-bottom: 50px; /* ⬅️ separação do modo de preparo */
+  text-align: left;
+}
+
+.coluna {
+  width: 300px;
+}
+
+li {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+/* LISTAS CENTRALIZADAS */
+ol {
+  max-width: 700px;
+  margin: 10px auto 30px auto; /* ⬅️ mais espaço entre blocos */
+  text-align: left;
+}
+
+/* PASSOS */
+.passo {
+  background: #f5f5f5;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* BOTÃO VOLTAR */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.back-button:hover {
+  color: #64cd87;
+  transform: translateY(-1px);
+}

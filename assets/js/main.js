@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
   /* ================= CARDS ================= */
   const container = document.querySelector(".cards");
 
@@ -33,6 +32,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
           </div>
         `;
+        const btnModoPreparo = card.querySelector(".btn");
+
+        btnModoPreparo.addEventListener("click", () => {
+          window.location.href = `receita.html?id=${r.id}`;
+        });
+
+        container.appendChild(card);
 
         container.appendChild(card);
       });
@@ -95,7 +101,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     if (usuario && (usuario.nome || usuario.email)) {
-
       // 🔥 fallback seguro
       let nome = usuario.nome;
 
@@ -118,7 +123,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           location.reload();
         }
       };
-
     } else {
       userArea.innerHTML = "Entrar";
       userArea.onclick = () => {
@@ -126,5 +130,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
     }
   }
-
 });

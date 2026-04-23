@@ -53,3 +53,24 @@ if (cadastroForm) {
     window.location.href = "login.html";
   });
 }
+
+const resetForm = document.getElementById("resetForm");
+
+if (resetForm) {
+  resetForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const existe = usuarios.find(u => u.email === email);
+
+    if (!existe) {
+      alert("E-mail não encontrado!");
+      return;
+    }
+
+    alert("Link de recuperação enviado!");
+  });
+}

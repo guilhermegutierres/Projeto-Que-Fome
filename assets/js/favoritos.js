@@ -1,76 +1,99 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.querySelector(".cards");
+  const searchInput = document.getElementById("searchInput");
+  const linksCategoria = document.querySelectorAll("[data-categoria]");
 
-  /* ================= CARREGAR JSON ================= */
   const response = await fetch("assets/data/receitas.json");
   const receitas = await response.json();
 
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-  /* ================= FILTRAR FAVORITOS ================= */
-  const receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
+  let receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
 
-  container.innerHTML = "";
+  let listaAtual = receitasFavoritas;
 
-  if (receitasFavoritas.length === 0) {
-    container.innerHTML =
-      "<h2 style='text-align:center;'>Nenhum favorito ainda...</h2>";
-    return;
+  renderizar(listaAtual);
+
+  /* ================= RENDER ================= */
+  function renderizar(lista) {
+    container.innerHTML = "";
+
+    if (lista.length === 0) {
+      container.innerHTML =
+        "<h2 style='text-align:center;'>Nenhum resultado encontrado...</h2>";
+      return;
+    }
+
+    lista.forEach((r) => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.dataset.id = r.id;
+
+      const isFav = favoritos.includes(r.id);
+
+      card.innerHTML = `
+        <img src="${r.imagem}">
+        <div>
+          <h2>${r.titulo}</h2>
+          <p>${r.descricao}</p>
+
+          <div class="card-actions">
+            <button class="btn">Modo de preparo</button>
+
+            <button class="btn btn-fav ${isFav ? "active" : ""}">
+              ${isFav ? "Desfavoritar" : "Favoritar"}
+              <span class="heart">
+                <i class="ri-heart-line"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      card.querySelector(".btn").addEventListener("click", () => {
+        window.location.href = `receita.html?id=${r.id}`;
+      });
+
+      container.appendChild(card);
+    });
   }
 
-  receitasFavoritas.forEach((r) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.dataset.id = r.id;
+  /* ================= FILTRO ================= */
+  linksCategoria.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
 
-    const isFav = favoritos.includes(r.id);
+      const categoria = link.dataset.categoria;
 
-    card.innerHTML = `
-      <img src="${r.imagem}">
-      <div>
-        <h2>${r.titulo}</h2>
-        <p>${r.descricao}</p>
+      listaAtual = receitasFavoritas.filter(
+        (r) => r.categoria.toLowerCase() === categoria.toLowerCase(),
+      );
 
-        <div class="card-actions">
-          <button class="btn">Modo de preparo</button>
-
-          <button class="btn btn-fav ${isFav ? "active" : ""}">
-            ${isFav ? "Desfavoritar" : "Favoritar"}
-            <span class="heart">
-              <i class="ri-heart-line"></i>
-            </span>
-          </button>
-        </div>
-      </div>
-    `;
-    const btnModoPreparo = card.querySelector(".btn");
-
-    btnModoPreparo.addEventListener("click", () => {
-      window.location.href = `receita.html?id=${r.id}`;
+      renderizar(listaAtual);
     });
-
-    container.appendChild(card);
   });
 
-  /* ================= FAVORITOS (CLIQUE) ================= */
+  /* ================= BUSCA ================= */
+  searchInput.addEventListener("input", () => {
+    const termo = searchInput.value.toLowerCase();
+
+    const resultado = listaAtual.filter((r) =>
+      r.titulo.toLowerCase().includes(termo),
+    );
+
+    renderizar(resultado);
+  });
+
+  /* ================= FAVORITOS ================= */
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-fav");
     if (!btn) return;
 
-    const card = btn.closest(".card");
-    const id = card.dataset.id;
+    const id = btn.closest(".card").dataset.id;
 
-    let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+    favoritos = favoritos.filter((f) => f !== id);
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    if (favs.includes(id)) {
-      favs = favs.filter((f) => f !== id);
-    } else {
-      favs.push(id);
-    }
-
-    localStorage.setItem("favoritos", JSON.stringify(favs));
-
-    // Re-renderiza a tela
     location.reload();
   });
 });

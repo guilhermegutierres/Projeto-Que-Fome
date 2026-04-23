@@ -67,5 +67,14 @@ function renderizar(r) {
       .join("")}
   `;
 }
+/* ================= NAVBAR REDIRECT ================= */
+document.querySelectorAll("[data-categoria]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const categoria = link.dataset.categoria;
+
+    window.location.href = `index.html?categoria=${categoria}`;
+  });
+});
 
 carregarReceita();

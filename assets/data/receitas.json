@@ -2,6 +2,7 @@
   {
     "id": "1",
     "titulo": "Torta de Frango",
+    "categoria": "Aves",
     "descricao": "A torta de frango de liquidificador é a representação perfeita de uma receita prática, deliciosa e que conquista pelo sabor.",
     "descricaoCompleta": "Essa receita de torta de frango de liquidificador é deliciosa e muito prática para o dia a dia. Além de ser perfeita para levar para a festa junina da família. Não à toa, é uma das nossa campeãs de acessos. Por ser feita no liquidificador, a massa é líquida e a montagem é diferente de uma torta de frango tradicional. Você deve despejar metade dela na forma untada, adicionar o recheio e cobri-lo com o restante da massa. Se quiser, adicione um pouco de queijo ralado em cima para gratinar no forno antes de cozinhar. A torta de frango com massa de liquidificador é muito mais prática de fazer do que um empadão, por exemplo, já que você não precisa misturar farinha e manteiga, abrir a massa e cobrir a forma manualmente. Se você busca praticidade, essa é a receita ideal! Aprenda agora mesmo a fazer essa torta de frango simples e fácil!",
     "imagem": "assets/imagens/tortadefrango.jpg",
@@ -53,6 +54,7 @@
   {
     "id": "2",
     "titulo": "Carne Assada",
+    "categoria": "Carnes",
     "descricao": "Uma carne assada suculenta e bem temperada, perfeita para almoços em família e ocasiões especiais.",
     "descricaoCompleta": "A carne assada na panela de pressão é uma receita prática, suculenta e cheia de sabor, perfeita para quem busca uma refeição deliciosa sem precisar passar horas na cozinha. A panela de pressão acelera o cozimento, deixando a carne extremamente macia e bem temperada em pouco tempo. O segredo está na combinação de temperos e no tempo de cozimento ideal, que garante um resultado irresistível. Além de ser uma ótima opção para o dia a dia, essa receita também é perfeita para um almoço em família ou até mesmo um jantar especial. O molho que se forma durante o preparo fica encorpado e cheio de sabor, ideal para acompanhar arroz, batatas ou legumes. Você também pode adaptar os temperos ao seu gosto, adicionando ervas frescas ou especiarias. Essa carne assada vai encantar a todos com sua textura macia, sabor marcante e facilidade de preparo. Uma receita simples, mas que entrega um resultado digno de restaurante!",
     "imagem": "assets/imagens/carneassada.jpg",
@@ -91,6 +93,7 @@
   {
     "id": "3",
     "titulo": "Macarrão alho e óleo",
+    "categoria": "Massas",
     "descricao": "Macarrão alho e óleo, um clássico simples e saboroso, com alho dourado que traz um aroma irresistível.",
     "descricaoCompleta": "Aquela receita simples e prática que todo mundo ama: macarrão ao alho e óleo! Esse clássico da culinária é perfeito para quem busca uma refeição rápida, saborosa e feita com poucos ingredientes. O grande destaque do prato está no alho dourado no ponto certo, que libera um aroma irresistível e garante um sabor marcante e equilibrado. Apesar de ser uma receita fácil, alguns detalhes fazem toda a diferença no resultado final, como a escolha de um bom azeite e o cuidado ao dourar o alho sem queimar. O macarrão deve estar no ponto ideal, bem soltinho, para absorver o sabor do tempero e ficar ainda mais delicioso. Versátil e econômico, o macarrão ao alho e óleo pode ser servido sozinho ou acompanhado de carnes, frango ou saladas, sendo uma ótima opção tanto para o dia a dia quanto para momentos especiais. Veja agora mesmo como preparar essa massa clássica que conquista todo mundo!",
     "imagem": "assets/imagens/macarrao.jpg",
@@ -122,6 +125,7 @@
   {
     "id": "4",
     "titulo": "Mousse de Limão",
+    "categoria": "Doces",
     "descricao": "Um mousse de limão refrescante e cremoso, com equilíbrio perfeito entre o doce e o azedinho.",
     "descricaoCompleta": "Se você está procurando uma receita de mousse de limão rápida e fácil, veio ao lugar certo! A mousse de limão é uma delícia cremosa, refrescante e ácida na medida certa para se tornar uma sobremesa irresistível. A receita de mousse de limão simples pede apenas 4 ingredientes. O leite condensado, o creme de leite e o suco de limão natural são batidos no liquidificador até se transformarem no creme da mousse. Depois de algumas horas na geladeira, ele fica no ponto certo para comer. Para finalizar esse doce de mousse de limão rápido, em vez das tradicionais raspas de limão, você pode colocar Bis de limão triturado para dar um toque crocante a essa sobremesa leve. Para quem quer uma sobremesa rápida e fácil, não tem receita mais simples do que essa. Como fazer mousse de limão tem poucos passos, até quem está começando na cozinha consegue fazer esse preparo!",
     "imagem": "assets/imagens/moussedelimao.jpg",
@@ -152,6 +156,7 @@
   {
     "id": "5",
     "titulo": "Bolo de Morango",
+    "categoria": "Bolos",
     "descricao": "Bolo fofinho e úmido com pedaços de morango, perfeito para sobremesas e momentos especiais.",
     "descricaoCompleta": "O bolo de morango é uma sobremesa clássica, delicada e cheia de sabor, perfeita para qualquer ocasião especial ou até mesmo para adoçar o dia a dia. Com uma massa macia e fofinha combinada com o frescor dos morangos, essa receita conquista pelo equilíbrio entre o doce e o levemente ácido da fruta. O segredo está na qualidade dos ingredientes e no cuidado no preparo, garantindo um bolo úmido e saboroso. Além disso, pode ser incrementado com recheios, coberturas ou chantilly, deixando a apresentação ainda mais bonita e irresistível. Seja para um aniversário, café da tarde ou comemoração em família, o bolo de morango é sempre uma escolha certeira que agrada a todos e transforma qualquer momento em algo especial.",
     "imagem": "assets/imagens/bolodemorango.jpg",
@@ -212,6 +217,7 @@
   {
     "id": "6",
     "titulo": "Pudim de Leite Condensado",
+    "categoria": "Doces",
     "descricao": "Pudim cremoso, lisinho e com uma deliciosa calda de caramelo, perfeito para qualquer ocasião.",
     "descricaoCompleta": "Veja como fazer essa receita de pudim de leite condensado lisinho e com uma calda perfeita de caramelo. Ele é delicioso, barato e bem rápido de preparar! Com sua textura macia e sabor inconfundível, esse doce é uma verdadeira tentação para os amantes de sobremesas tradicionais. Fácil de preparar e com ingredientes simples, o pudim é uma opção perfeita para adoçar qualquer ocasião especial. Com um modo de preparo bem simples, envolvendo poucos ingredientes como leite condensado, leite, ovos e açúcar para a calda, você irá criar uma sobremesa que certamente vai encantar a todos os paladares. Surpreenda sua família e amigos com esse clássico da culinária, que além de delicioso, possui uma apresentação encantadora. Siga o passo a passo desta receita e mergulhe nessa experiência de sabores que certamente vai conquistar a todos.",
     "imagem": "assets/imagens/pudim.jpg",

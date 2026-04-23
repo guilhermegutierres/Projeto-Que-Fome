@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         container.appendChild(card);
-
-        container.appendChild(card);
       });
     } catch (error) {
       console.error("Erro ao carregar receitas:", error);
@@ -68,66 +66,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         icon.style.color = "#ff6b6b";
       }
     });
-  }
-
-  /* ================= DARK MODE ================= */
-  const toggle = document.querySelector(".dark-toggle");
-
-  if (toggle) {
-    const iconDark = toggle.querySelector("i");
-
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
-
-      if (document.body.classList.contains("dark-theme")) {
-        iconDark.classList.replace("ri-moon-line", "ri-sun-line");
-      } else {
-        iconDark.classList.replace("ri-sun-line", "ri-moon-line");
-      }
-    });
-  }
-
-  /* ================= LOGIN / PERFIL ================= */
-  const userArea = document.getElementById("user-area");
-
-  if (userArea) {
-    let usuario = null;
-
-    try {
-      usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
-    } catch (e) {
-      console.warn("Erro ao ler usuário:", e);
-      localStorage.removeItem("usuarioLogado");
-    }
-
-    if (usuario && (usuario.nome || usuario.email)) {
-      // 🔥 fallback seguro
-      let nome = usuario.nome;
-
-      if (!nome && usuario.email) {
-        nome = usuario.email.split("@")[0];
-      }
-
-      if (!nome) nome = "Usuário";
-
-      // 🔥 limite tamanho
-      if (nome.length > 12) {
-        nome = nome.slice(0, 12) + "...";
-      }
-
-      userArea.innerHTML = `Olá, ${nome}`;
-
-      userArea.onclick = () => {
-        if (confirm("Deseja sair?")) {
-          localStorage.removeItem("usuarioLogado");
-          location.reload();
-        }
-      };
-    } else {
-      userArea.innerHTML = "Entrar";
-      userArea.onclick = () => {
-        window.location.href = "login.html";
-      };
-    }
   }
 });

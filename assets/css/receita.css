@@ -133,30 +133,6 @@ ol {
   background: #ececec;
 }
 
-/* ================= BOTÃO VOLTAR ================= */
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
-  text-decoration: none;
-  font-size: 14px;
-  color: #555;
-
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 999px;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
-  transition: 0.2s;
-  z-index: 10;
-}
-
-.back-button:hover {
-  color: #64cd87;
-}
-
 /* ================= DARK MODE ================= */
 .dark-theme {
   background: #121212;

@@ -1,40 +1,50 @@
+/* ================= BASE ================= */
 body {
-  background: #f3f3f3;
+  margin: 0;
   font-family: "Nunito", sans-serif;
+
+  background: #f3f2f1;
+  color: #2b2b2b;
 }
 
-/* CONTAINER PRINCIPAL */
+/* ================= CONTAINER ================= */
 .container_receita {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  background: #fff;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+
   text-align: center;
 }
 
-/* TÍTULO */
+/* ================= TÍTULO ================= */
 h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
-/* VÍDEO */
+/* ================= VÍDEO ================= */
 .video iframe {
   width: 100%;
-  height: 450px;
+  height: 420px;
   border-radius: 12px;
 }
 
-/* INFO (TEMPO / DIFICULDADE / CUSTO) */
+/* ================= INFO ================= */
 .info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin: 25px 0;
-  font-size: 20px;
+  font-size: 17px;
+
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .info p {
@@ -50,63 +60,80 @@ h1 {
   text-align: right;
 }
 
-/* DESCRIÇÃO */
+/* ================= DESCRIÇÃO ================= */
 .descricao {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 40px; /* ⬅️ aumentei */
+  font-size: 15px;
+  line-height: 1.6;
+
+  margin-bottom: 40px;
   text-align: justify;
 }
 
-/* TÍTULOS */
+/* ================= TÍTULOS ================= */
 h2 {
-  font-size: 26px;
-  margin: 50px 0 20px; /* ⬅️ mais espaço antes do modo de preparo */
+  font-size: 22px;
+  margin: 40px 0 20px;
   text-align: center;
+}
+
+h2::before {
+  content: "👨‍🍳 ";
 }
 
 h3 {
-  font-size: 20px;
-  margin: 25px 0 10px; /* ⬅️ mais espaço entre seções */
+  font-size: 18px;
+  margin: 20px 0 10px;
   text-align: center;
 }
 
-/* INGREDIENTES */
+/* ================= INGREDIENTES ================= */
 .ingredientes-container {
   display: flex;
   justify-content: center;
-  gap: 80px; /* ⬅️ mais espaço entre Recheio e Massa */
-  margin-top: 40px; /* ⬅️ mais espaço da descrição */
-  margin-bottom: 50px; /* ⬅️ separação do modo de preparo */
+
+  gap: 60px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+
   text-align: left;
 }
 
 .coluna {
-  width: 300px;
+  width: 280px;
 }
 
 li {
-  font-size: 17px;
-  margin-bottom: 8px;
+  font-size: 14.5px;
+  margin-bottom: 6px;
 }
 
-/* LISTAS CENTRALIZADAS */
+/* ================= LISTA ================= */
 ol {
   max-width: 700px;
-  margin: 10px auto 30px auto; /* ⬅️ mais espaço entre blocos */
+  margin: 10px auto 30px auto;
   text-align: left;
 }
 
-/* PASSOS */
+/* ================= PASSOS ================= */
 .passo {
   background: #f5f5f5;
+
   padding: 14px;
   border-radius: 10px;
-  margin-bottom: 12px;
-  font-size: 16px;
+
+  margin-bottom: 10px;
+
+  font-size: 14.5px;
+  line-height: 1.5;
+
+  transition: 0.2s;
 }
 
-/* BOTÃO VOLTAR */
+.passo:hover {
+  background: #ececec;
+}
+
+/* ================= BOTÃO VOLTAR ================= */
 .back-button {
   position: absolute;
   top: 20px;
@@ -128,5 +155,26 @@ ol {
 
 .back-button:hover {
   color: #64cd87;
-  transform: translateY(-1px);
+}
+
+/* ================= DARK MODE ================= */
+.dark-theme {
+  background: #121212;
+  color: #fff;
+}
+
+.dark-theme .container_receita {
+  background: #2a2a2a;
+}
+
+.dark-theme .descricao {
+  color: #bbb;
+}
+
+.dark-theme .passo {
+  background: #333;
+}
+
+.dark-theme .passo:hover {
+  background: #3d3d3d;
 }

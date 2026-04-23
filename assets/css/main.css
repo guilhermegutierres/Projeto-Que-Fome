@@ -333,3 +333,8 @@ html,
 body {
   height: 100%;
 }
+
+.user-area {
+  cursor: pointer;
+  font-weight: 600;
+}

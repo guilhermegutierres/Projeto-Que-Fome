@@ -53,7 +53,7 @@ function renderizar(r) {
         .join("")}
     </div>
 
-    <h2>👨‍🍳 Modo de Preparo</h2>
+    <h2>Modo de Preparo</h2>
 
     ${Object.entries(r.modo_preparo)
       .map(

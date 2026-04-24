@@ -100,9 +100,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderizar(resultado);
   });
 
+  /* ================= FAVORITAR COM VALIDAÇÃO ================= */
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-fav");
     if (!btn) return;
+
+    const usuario = localStorage.getItem("usuarioLogado");
+
+    // 🔥 BLOQUEIO
+    if (!usuario) {
+      alert("Faça login para favoritar receitas ❤️");
+      window.location.href = "login.html";
+      return;
+    }
 
     const card = btn.closest(".card");
     const id = card.dataset.id;

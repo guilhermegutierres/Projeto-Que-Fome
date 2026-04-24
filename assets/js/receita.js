@@ -6,8 +6,16 @@ function getIdFromURL() {
 async function carregarReceita() {
   const id = getIdFromURL();
 
+  // 🔥 pega do JSON
   const response = await fetch("assets/data/receitas.json");
-  const receitas = await response.json();
+  const receitasJson = await response.json();
+
+  // 🔥 pega do localStorage
+  const receitasLocal =
+    JSON.parse(localStorage.getItem("receitas")) || [];
+
+  // 🔥 junta tudo
+  const receitas = [...receitasJson, ...receitasLocal];
 
   const receita = receitas.find((r) => r.id === id);
 
@@ -67,14 +75,5 @@ function renderizar(r) {
       .join("")}
   `;
 }
-/* ================= NAVBAR REDIRECT ================= */
-document.querySelectorAll("[data-categoria]").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const categoria = link.dataset.categoria;
-
-    window.location.href = `index.html?categoria=${categoria}`;
-  });
-});
 
 carregarReceita();

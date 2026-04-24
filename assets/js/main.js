@@ -2,13 +2,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   const container = document.querySelector(".cards");
   const searchInput = document.getElementById("searchInput");
   const linksCategoria = document.querySelectorAll("[data-categoria]");
+  const fab = document.getElementById("fab-add");
 
   let receitas = [];
   let receitasFiltradas = [];
 
   try {
     const response = await fetch("assets/data/receitas.json");
-    receitas = await response.json();
+    const receitasJson = await response.json();
+
+    const receitasLocal =
+      JSON.parse(localStorage.getItem("receitas")) || [];
+
+    receitas = [...receitasJson, ...receitasLocal];
+
     receitasFiltradas = receitas;
 
     renderizar(receitasFiltradas);
@@ -16,7 +23,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Erro ao carregar receitas:", error);
   }
 
-  /* ================= RENDER ================= */
+  /* FAB */
+  if (fab) {
+    fab.addEventListener("click", () => {
+      const usuario = localStorage.getItem("usuarioLogado");
+
+      if (usuario) {
+        window.location.href = "adicionar-receita.html";
+      } else {
+        alert("Você precisa estar logado!");
+        window.location.href = "login.html";
+      }
+    });
+  }
+
   function renderizar(lista) {
     container.innerHTML = "";
 
@@ -46,9 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
       `;
 
-      const btnModoPreparo = card.querySelector(".btn");
-
-      btnModoPreparo.addEventListener("click", () => {
+      card.querySelector(".btn").addEventListener("click", () => {
         window.location.href = `receita.html?id=${r.id}`;
       });
 
@@ -56,7 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  /* ================= FILTRO POR CATEGORIA ================= */
   linksCategoria.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -64,25 +81,25 @@ document.addEventListener("DOMContentLoaded", async () => {
       const categoria = link.dataset.categoria;
 
       receitasFiltradas = receitas.filter(
-        (r) => r.categoria.toLowerCase() === categoria.toLowerCase(),
+        (r) =>
+          r.categoria &&
+          r.categoria.toLowerCase() === categoria.toLowerCase()
       );
 
       renderizar(receitasFiltradas);
     });
   });
 
-  /* ================= BUSCA ================= */
   searchInput.addEventListener("input", () => {
     const termo = searchInput.value.toLowerCase();
 
     const resultado = receitasFiltradas.filter((r) =>
-      r.titulo.toLowerCase().includes(termo),
+      r.titulo.toLowerCase().includes(termo)
     );
 
     renderizar(resultado);
   });
 
-  /* ================= FAVORITOS ================= */
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-fav");
     if (!btn) return;

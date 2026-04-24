@@ -338,3 +338,36 @@ body {
   cursor: pointer;
   font-weight: 600;
 }
+
+/* ================= FAB ADD RECEITA ================= */
+.fab-add {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 60px;
+  height: 60px;
+
+  background: linear-gradient(135deg, #64cd87, #57c97c);
+  color: #fff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  transition: 0.2s;
+  z-index: 999;
+}
+
+.fab-add:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(100, 205, 135, 0.5);
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Adicionar Receita - Que Fome!</title>
+
+  <link rel="stylesheet" href="assets/css/auth.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<a href="index.html" class="back-button">← Voltar</a>
+
+<div class="auth-container">
+  <div class="auth-box">
+
+    <h1>Nova Receita</h1>
+    <p class="subtitle">Preencha os dados abaixo 👇</p>
+
+    <form id="receitaForm">
+
+      <!-- INFO -->
+      <h3>📌 Informações básicas</h3>
+
+      <label>Título</label>
+      <input type="text" id="titulo" placeholder="Ex: Mousse de Limão" required />
+
+      <label>Categoria</label>
+      <select id="categoria" required>
+        <option value="">Selecione</option>
+        <option value="doces">Sobremesas - Doces</option>
+        <option value="massas">Principais - Massas</option>
+        <option value="carnes">Principais - Carnes</option>
+        <option value="sopas">Entradas - Sopas</option>
+        <option value="saladas">Entradas - Saladas</option>
+      </select>
+
+      <!-- IMAGEM -->
+      <label>Imagem da receita</label>
+
+      <input type="file" id="imagemUpload" accept="image/*" />
+      <small>Envie uma imagem OU cole uma URL</small>
+
+      <input type="text" id="imagem" placeholder="Ou cole uma URL (.jpg/.png)" />
+
+      <img id="preview" />
+
+      <!-- VIDEO -->
+      <label>Vídeo (YouTube)</label>
+      <input type="text" id="video" placeholder="Cole link do YouTube (opcional)" />
+
+      <!-- DETALHES -->
+      <h3>⚙️ Detalhes</h3>
+
+      <input type="text" id="tempo" placeholder="Tempo (ex: 10 min)" required />
+
+      <select id="dificuldade" required>
+        <option value="">Dificuldade</option>
+        <option>Muito fácil</option>
+        <option>Fácil</option>
+        <option>Médio</option>
+        <option>Difícil</option>
+      </select>
+
+      <select id="custo" required>
+        <option value="">Custo</option>
+        <option>Baixo</option>
+        <option>Médio</option>
+        <option>Alto</option>
+      </select>
+
+      <!-- DESCRIÇÃO -->
+      <h3>📝 Descrição</h3>
+
+      <input type="text" id="descricao" placeholder="Descrição curta" required />
+
+      <textarea id="descricaoCompleta"
+        placeholder="Descrição completa da receita"></textarea>
+
+      <!-- INGREDIENTES -->
+      <h3>🥕 Ingredientes</h3>
+
+      <textarea id="ingredientes"
+        placeholder="Digite UM ingrediente por linha&#10;Ex:&#10;1 lata de leite condensado&#10;1 caixa de creme de leite"></textarea>
+
+      <!-- MODO -->
+      <h3>👨‍🍳 Modo de preparo</h3>
+
+      <textarea id="modo"
+        placeholder="Digite UM passo por linha&#10;Ex:&#10;Misture tudo&#10;Leve à geladeira"></textarea>
+
+      <button type="submit">Salvar Receita</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script src="assets/js/adicionar-receita.js"></script>
+
+</body>
+</html>

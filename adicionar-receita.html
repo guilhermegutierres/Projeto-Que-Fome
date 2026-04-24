@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -31,11 +31,38 @@
       <label>Categoria</label>
       <select id="categoria" required>
         <option value="">Selecione</option>
-        <option value="doces">Sobremesas - Doces</option>
-        <option value="massas">Principais - Massas</option>
-        <option value="carnes">Principais - Carnes</option>
-        <option value="sopas">Entradas - Sopas</option>
-        <option value="saladas">Entradas - Saladas</option>
+
+        <optgroup label="Entradas">
+          <option value="saladas">Saladas</option>
+          <option value="sopas">Sopas</option>
+          <option value="petiscos">Petiscos</option>
+        </optgroup>
+
+        <optgroup label="Principais">
+          <option value="massas">Massas</option>
+          <option value="peixes">Peixes</option>
+          <option value="carnes">Carnes</option>
+          <option value="aves">Aves</option>
+          <option value="vegetarianos">Vegetarianos</option>
+        </optgroup>
+
+        <optgroup label="Acompanhamentos">
+          <option value="arroz">Arroz</option>
+          <option value="legumes">Legumes</option>
+          <option value="batatas">Batatas</option>
+        </optgroup>
+
+        <optgroup label="Sobremesas">
+          <option value="bolos">Bolos</option>
+          <option value="doces">Doces</option>
+          <option value="tortas">Tortas</option>
+        </optgroup>
+
+        <optgroup label="Bebidas">
+          <option value="sucos">Sucos</option>
+          <option value="drinks">Drinks</option>
+          <option value="cafes">Cafés</option>
+        </optgroup>
       </select>
 
       <!-- IMAGEM -->

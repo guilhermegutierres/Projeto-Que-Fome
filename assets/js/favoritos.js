@@ -3,12 +3,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = document.getElementById("searchInput");
   const linksCategoria = document.querySelectorAll("[data-categoria]");
 
+  /* ================= CARREGA RECEITAS ================= */
   const response = await fetch("assets/data/receitas.json");
-  const receitas = await response.json();
+  const receitasJson = await response.json();
+
+  const receitasLocal =
+    JSON.parse(localStorage.getItem("receitas")) || [];
+
+  const receitas = [...receitasJson, ...receitasLocal];
 
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-  let receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
+  let receitasFavoritas = receitas.filter((r) =>
+    favoritos.includes(r.id)
+  );
 
   let listaAtual = receitasFavoritas;
 
@@ -19,10 +27,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     container.innerHTML = "";
 
     if (lista.length === 0) {
-      container.innerHTML =
-        "<h2 style='text-align:center;'>Nenhum resultado encontrado...</h2>";
+      container.classList.add("empty");
+      container.innerHTML = `
+        <div class="empty-state">
+          <h2>Nenhum favorito ainda 😢</h2>
+          <p>Adicione receitas aos favoritos para vê-las aqui.</p>
+        </div>
+      `;
       return;
     }
+
+    container.classList.remove("empty");
 
     lista.forEach((r) => {
       const card = document.createElement("div");
@@ -66,7 +81,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const categoria = link.dataset.categoria;
 
       listaAtual = receitasFavoritas.filter(
-        (r) => r.categoria.toLowerCase() === categoria.toLowerCase(),
+        (r) =>
+          r.categoria &&
+          r.categoria.toLowerCase() === categoria.toLowerCase()
       );
 
       renderizar(listaAtual);
@@ -78,13 +95,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const termo = searchInput.value.toLowerCase();
 
     const resultado = listaAtual.filter((r) =>
-      r.titulo.toLowerCase().includes(termo),
+      r.titulo.toLowerCase().includes(termo)
     );
 
     renderizar(resultado);
   });
 
-  /* ================= FAVORITOS ================= */
+  /* ================= REMOVER FAVORITO ================= */
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-fav");
     if (!btn) return;
@@ -94,6 +111,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     favoritos = favoritos.filter((f) => f !== id);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    location.reload();
+    receitasFavoritas = receitas.filter((r) =>
+      favoritos.includes(r.id)
+    );
+
+    listaAtual = receitasFavoritas;
+
+    renderizar(listaAtual);
   });
 });

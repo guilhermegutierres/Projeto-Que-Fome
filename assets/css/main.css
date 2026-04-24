@@ -371,3 +371,26 @@ body {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 35px rgba(100, 205, 135, 0.5);
 }
+
+/* ================= EMPTY STATE FIX ================= */
+.cards.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.empty-state {
+  text-align: center;
+  color: #555;
+}
+
+.empty-state h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 15px;
+  color: #777;
+}

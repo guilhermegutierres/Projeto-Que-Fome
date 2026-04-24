@@ -2,8 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputUpload = document.getElementById("imagemUpload");
   const inputURL = document.getElementById("imagem");
   const preview = document.getElementById("preview");
+  const containerPassos = document.getElementById("passos-container");
+  const btnAddPasso = document.getElementById("add-passo");
+
+  let contadorPassos = 1;
 
   let imagemFinal = "";
+
+  btnAddPasso.addEventListener("click", () => {
+    contadorPassos++;
+
+    const div = document.createElement("div");
+    div.classList.add("passo-item");
+
+    div.innerHTML = `
+    <input type="text" placeholder="Passo ${contadorPassos}" class="passo-input" />
+  `;
+
+    containerPassos.appendChild(div);
+  });
 
   /* ================= PREVIEW UPLOAD ================= */
   inputUpload.addEventListener("change", () => {
@@ -56,14 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .filter((item) => item);
   }
 
-  function transformarModoPreparo(texto) {
-    return texto
-      .split("\n")
-      .map((item) => item.trim())
-      .filter((item) => item);
-  }
-
-  /* ================= SUBMIT ================= */
   document
     .getElementById("receitaForm")
     .addEventListener("submit", function (e) {
@@ -71,6 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!imagemFinal) {
         alert("Adicione uma imagem!");
+        return;
+      }
+
+      const passos = Array.from(document.querySelectorAll(".passo-input"))
+        .map((input) => input.value.trim())
+        .filter((p) => p);
+
+      if (passos.length === 0) {
+        alert("Adicione pelo menos um passo!");
         return;
       }
 
@@ -97,9 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         modo_preparo: {
-          "Modo de preparo": transformarModoPreparo(
-            document.getElementById("modo").value,
-          ),
+          "Modo de preparo": passos,
         },
       };
 

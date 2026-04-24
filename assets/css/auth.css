@@ -148,7 +148,9 @@ body {
 .auth-box button {
   width: 100%;
   height: 48px;
+
   margin-top: 20px;
+  margin-bottom: 20px; /* 🔥 RESPIRO PRINCIPAL */
 
   background: linear-gradient(135deg, #64cd87, #57c97c);
 
@@ -169,10 +171,12 @@ body {
   box-shadow: 0 6px 15px rgba(100, 205, 135, 0.4);
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER (LOGIN) ================= */
 .auth-footer {
   display: flex;
   justify-content: space-between;
+
+  margin-top: 10px; /* 🔥 espaço do botão */
 
   font-size: 14px;
   color: #666;
@@ -185,6 +189,25 @@ body {
 
 .auth-footer a:hover {
   color: #64cd87;
+}
+
+/* ================= LINKS (CRIAR CONTA / ESQUECI SENHA) ================= */
+.auth-links {
+  margin-top: 10px; /* 🔥 mesmo padrão */
+
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.auth-links a {
+  color: #64cd87;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
 }
 
 /* ================= PREVIEW IMAGEM ================= */

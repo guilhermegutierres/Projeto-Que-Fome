@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const inputUpload = document.getElementById("imagemUpload");
   const inputURL = document.getElementById("imagem");
   const preview = document.getElementById("preview");
@@ -50,58 +49,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ================= TRANSFORMAR LISTA (MELHORIA UX) ================= */
-  function transformarLista(texto) {
+  function transformarIngredientes(texto) {
     return texto
-      .split(/\n|,/) // aceita ENTER OU vírgula
-      .map(item => item.trim())
-      .filter(item => item);
+      .split(/\n|,/)
+      .map((item) => item.trim())
+      .filter((item) => item);
+  }
+
+  function transformarModoPreparo(texto) {
+    return texto
+      .split("\n")
+      .map((item) => item.trim())
+      .filter((item) => item);
   }
 
   /* ================= SUBMIT ================= */
-  document.getElementById("receitaForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+  document
+    .getElementById("receitaForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    if (!imagemFinal) {
-      alert("Adicione uma imagem!");
-      return;
-    }
-
-    const novaReceita = {
-      id: Date.now().toString(),
-
-      titulo: document.getElementById("titulo").value,
-      categoria: document.getElementById("categoria").value,
-
-      descricao: document.getElementById("descricao").value,
-      descricaoCompleta: document.getElementById("descricaoCompleta").value,
-
-      imagem: imagemFinal,
-      video: converterYoutube(document.getElementById("video").value),
-
-      tempo: document.getElementById("tempo").value,
-      dificuldade: document.getElementById("dificuldade").value,
-      custo: document.getElementById("custo").value,
-
-      ingredientes: {
-        "Ingredientes":
-          transformarLista(document.getElementById("ingredientes").value)
-      },
-
-      modo_preparo: {
-        "Modo de preparo":
-          transformarLista(document.getElementById("modo").value)
+      if (!imagemFinal) {
+        alert("Adicione uma imagem!");
+        return;
       }
-    };
 
-    let receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+      const novaReceita = {
+        id: Date.now().toString(),
 
-    receitas.push(novaReceita);
+        titulo: document.getElementById("titulo").value,
+        categoria: document.getElementById("categoria").value,
 
-    localStorage.setItem("receitas", JSON.stringify(receitas));
+        descricao: document.getElementById("descricao").value,
+        descricaoCompleta: document.getElementById("descricaoCompleta").value,
 
-    alert("Receita adicionada!");
+        imagem: imagemFinal,
+        video: converterYoutube(document.getElementById("video").value),
 
-    window.location.href = "index.html";
-  });
+        tempo: document.getElementById("tempo").value,
+        dificuldade: document.getElementById("dificuldade").value,
+        custo: document.getElementById("custo").value,
 
+        ingredientes: {
+          Ingredientes: transformarIngredientes(
+            document.getElementById("ingredientes").value,
+          ),
+        },
+
+        modo_preparo: {
+          "Modo de preparo": transformarModoPreparo(
+            document.getElementById("modo").value,
+          ),
+        },
+      };
+
+      let receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+
+      receitas.push(novaReceita);
+
+      localStorage.setItem("receitas", JSON.stringify(receitas));
+
+      alert("Receita adicionada!");
+
+      window.location.href = "index.html";
+    });
 });

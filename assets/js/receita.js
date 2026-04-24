@@ -6,16 +6,18 @@ function getIdFromURL() {
 async function carregarReceita() {
   const id = getIdFromURL();
 
-  // 🔥 pega do JSON
   const response = await fetch("assets/data/receitas.json");
   const receitasJson = await response.json();
 
-  // 🔥 pega do localStorage
-  const receitasLocal =
-    JSON.parse(localStorage.getItem("receitas")) || [];
+  const receitasLocal = JSON.parse(localStorage.getItem("receitas")) || [];
 
-  // 🔥 junta tudo
-  const receitas = [...receitasJson, ...receitasLocal];
+  const idsJson = new Set(receitasJson.map((r) => r.id));
+
+  const receitasLocalFiltradas = receitasLocal.filter(
+    (r) => !idsJson.has(r.id),
+  );
+
+  const receitas = [...receitasJson, ...receitasLocalFiltradas];
 
   const receita = receitas.find((r) => r.id === id);
 
@@ -44,7 +46,7 @@ function renderizar(r) {
       <p><strong>💰 Custo:</strong> ${r.custo}</p>
     </div>
 
-    <p class="descricao">${r.descricaoCompleta || r.descricao}</p>
+    <p class="descricao">${r.descricaoCompleta || r.descricao || ""}</p>
 
     <div class="ingredientes-container">
       ${Object.entries(r.ingredientes)

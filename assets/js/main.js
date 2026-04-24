@@ -11,10 +11,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("assets/data/receitas.json");
     const receitasJson = await response.json();
 
-    const receitasLocal =
-      JSON.parse(localStorage.getItem("receitas")) || [];
+    const receitasLocal = JSON.parse(localStorage.getItem("receitas")) || [];
 
-    receitas = [...receitasJson, ...receitasLocal];
+    const idsJson = new Set(receitasJson.map((r) => r.id));
+
+    const receitasLocalFiltradas = receitasLocal.filter(
+      (r) => !idsJson.has(r.id),
+    );
+
+    receitas = [...receitasJson, ...receitasLocalFiltradas];
 
     receitasFiltradas = receitas;
 
@@ -82,8 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       receitasFiltradas = receitas.filter(
         (r) =>
-          r.categoria &&
-          r.categoria.toLowerCase() === categoria.toLowerCase()
+          r.categoria && r.categoria.toLowerCase() === categoria.toLowerCase(),
       );
 
       renderizar(receitasFiltradas);
@@ -94,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const termo = searchInput.value.toLowerCase();
 
     const resultado = receitasFiltradas.filter((r) =>
-      r.titulo.toLowerCase().includes(termo)
+      r.titulo.toLowerCase().includes(termo),
     );
 
     renderizar(resultado);

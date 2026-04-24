@@ -7,16 +7,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const response = await fetch("assets/data/receitas.json");
   const receitasJson = await response.json();
 
-  const receitasLocal =
-    JSON.parse(localStorage.getItem("receitas")) || [];
+  const receitasLocal = JSON.parse(localStorage.getItem("receitas")) || [];
 
-  const receitas = [...receitasJson, ...receitasLocal];
+  const idsJson = new Set(receitasJson.map((r) => r.id));
+
+  const receitasLocalFiltradas = receitasLocal.filter(
+    (r) => !idsJson.has(r.id),
+  );
+
+  const receitas = [...receitasJson, ...receitasLocalFiltradas];
 
   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-  let receitasFavoritas = receitas.filter((r) =>
-    favoritos.includes(r.id)
-  );
+  let receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
 
   let listaAtual = receitasFavoritas;
 
@@ -82,8 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       listaAtual = receitasFavoritas.filter(
         (r) =>
-          r.categoria &&
-          r.categoria.toLowerCase() === categoria.toLowerCase()
+          r.categoria && r.categoria.toLowerCase() === categoria.toLowerCase(),
       );
 
       renderizar(listaAtual);
@@ -95,7 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const termo = searchInput.value.toLowerCase();
 
     const resultado = listaAtual.filter((r) =>
-      r.titulo.toLowerCase().includes(termo)
+      r.titulo.toLowerCase().includes(termo),
     );
 
     renderizar(resultado);
@@ -111,9 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     favoritos = favoritos.filter((f) => f !== id);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    receitasFavoritas = receitas.filter((r) =>
-      favoritos.includes(r.id)
-    );
+    receitasFavoritas = receitas.filter((r) => favoritos.includes(r.id));
 
     listaAtual = receitasFavoritas;
 

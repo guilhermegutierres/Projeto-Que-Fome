@@ -26,7 +26,7 @@
       <h3>📌 Informações básicas</h3>
 
       <label>Título</label>
-      <input type="text" id="titulo" placeholder="Ex: Mousse de Limão" required />
+      <input type="text" id="titulo" placeholder="Ex: Mousse de limão" required />
 
       <label>Categoria</label>
       <select id="categoria" required>
@@ -42,31 +42,35 @@
       <label>Imagem da receita</label>
 
       <input type="file" id="imagemUpload" accept="image/*" />
-      <small>Envie uma imagem OU cole uma URL</small>
+      <small>Envie uma imagem do seu dispositivo ou cole um link de imagem</small>
 
-      <input type="text" id="imagem" placeholder="Ou cole uma URL (.jpg/.png)" />
+      <input type="text" id="imagem" placeholder="Ex: https://site.com/imagem.jpg" />
 
       <img id="preview" />
 
       <!-- VIDEO -->
       <label>Vídeo (YouTube)</label>
-      <input type="text" id="video" placeholder="Cole link do YouTube (opcional)" />
+      <input type="text" id="video" placeholder="Ex: https://youtube.com/watch?v=..." />
+      <small>Opcional — cole o link de um vídeo do YouTube</small>
 
       <!-- DETALHES -->
       <h3>⚙️ Detalhes</h3>
 
-      <input type="text" id="tempo" placeholder="Tempo (ex: 10 min)" required />
+      <label>Tempo de preparo</label>
+      <input type="text" id="tempo" placeholder="Ex: 10 min" required />
 
+      <label>Dificuldade</label>
       <select id="dificuldade" required>
-        <option value="">Dificuldade</option>
+        <option value="">Selecione</option>
         <option>Muito fácil</option>
         <option>Fácil</option>
         <option>Médio</option>
         <option>Difícil</option>
       </select>
 
+      <label>Custo</label>
       <select id="custo" required>
-        <option value="">Custo</option>
+        <option value="">Selecione</option>
         <option>Baixo</option>
         <option>Médio</option>
         <option>Alto</option>
@@ -75,22 +79,26 @@
       <!-- DESCRIÇÃO -->
       <h3>📝 Descrição</h3>
 
-      <input type="text" id="descricao" placeholder="Descrição curta" required />
+      <label>Descrição curta</label>
+      <input type="text" id="descricao" placeholder="Ex: Sobremesa rápida e cremosa" required />
 
+      <label>Descrição completa</label>
       <textarea id="descricaoCompleta"
-        placeholder="Descrição completa da receita"></textarea>
+        placeholder="Explique melhor a receita, dê dicas ou variações (opcional)"></textarea>
 
       <!-- INGREDIENTES -->
       <h3>🥕 Ingredientes</h3>
+      <small>Digite os ingredientes separados por vírgula ou pressione Enter</small>
 
       <textarea id="ingredientes"
-        placeholder="Digite UM ingrediente por linha&#10;Ex:&#10;1 lata de leite condensado&#10;1 caixa de creme de leite"></textarea>
+        placeholder="Ex: leite condensado, creme de leite, ovos"></textarea>
 
       <!-- MODO -->
       <h3>👨‍🍳 Modo de preparo</h3>
+      <small>Digite os passos separados por vírgula ou pressione Enter</small>
 
       <textarea id="modo"
-        placeholder="Digite UM passo por linha&#10;Ex:&#10;Misture tudo&#10;Leve à geladeira"></textarea>
+        placeholder="Ex: misture tudo, leve à geladeira"></textarea>
 
       <button type="submit">Salvar Receita</button>
 

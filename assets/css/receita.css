@@ -154,3 +154,44 @@ ol {
 .dark-theme .passo:hover {
   background: #3d3d3d;
 }
+
+/* ================= BOTÃO VOLTAR ================= */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s;
+
+  z-index: 999;
+}
+
+.back-button:hover {
+  color: #64cd87;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* DARK MODE */
+.dark-theme .back-button {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.dark-theme .back-button:hover {
+  color: #64cd87;
+}

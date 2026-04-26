@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Que Fome!</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="light-theme">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="rgba(100,205,135,1)">
+              <path d="M21 2V22H19V15H15V8C15 4.68629 17.6863 2 21 2ZM19 4.53C18.17 5 17 6.17 17 8V13H19V4.53ZM9 13.9V22H7V13.9C4.71776 13.4367 3 11.419 3 9V3H5V10H7V3H9V10H11V3H13V9C13 11.419 11.2822 13.4367 9 13.9Z"></path>
+            </svg>
+            <span>Que fome!</span>
+          </a>
+        </div>
+
+        <div class="navbar">
+          <div class="dropdown">
+            <a href="#">Entradas ▾</a>
+            <div class="dropdown-content">
+              <a href="#" data-categoria="saladas">Saladas</a>
+              <a href="#" data-categoria="sopas">Sopas</a>
+              <a href="#" data-categoria="petiscos">Petiscos</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Principais ▾</a>
+            <div class="dropdown-content">
+              <a href="#" data-categoria="massas">Massas</a>
+              <a href="#" data-categoria="peixes">Peixes</a>
+              <a href="#" data-categoria="carnes">Carnes</a>
+              <a href="#" data-categoria="aves">Aves</a>
+              <a href="#" data-categoria="vegetarianos">Vegetarianos</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Acompanhamentos ▾</a>
+            <div class="dropdown-content">
+              <a href="#" data-categoria="arroz">Arroz</a>
+              <a href="#" data-categoria="legumes">Legumes</a>
+              <a href="#" data-categoria="batatas">Batatas</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Sobremesas ▾</a>
+            <div class="dropdown-content">
+              <a href="#" data-categoria="bolos">Bolos</a>
+              <a href="#" data-categoria="doces">Doces</a>
+              <a href="#" data-categoria="tortas">Tortas</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Bebidas ▾</a>
+            <div class="dropdown-content">
+              <a href="#" data-categoria="sucos">Sucos</a>
+              <a href="#" data-categoria="drinks">Drinks</a>
+              <a href="#" data-categoria="cafes">Cafés</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="topbar">
+          <div class="search">
+            <input id="searchInput" type="text" placeholder="O que quer cozinhar?" />
+            <i class="ri-search-line"></i>
+          </div>
+
+          <div class="dark-toggle">
+            <i class="ri-moon-line"></i>
+          </div>
+
+          <div class="fav-icon" onclick="window.location.href='favoritos.html'">
+            <i class="ri-heart-line"></i>
+          </div>
+
+          <div id="user-area" class="user-area">Entrar</div>
+        </div>
+      </div>
+    </header>
+
+<section class="titulo-pagina" style="text-align: center; margin: 40px 20px 20px 20px;">
+  <h1 style="color: #333; font-size: 2.2rem; margin-bottom: 8px;">Veja todas suas receitas</h1>
+</section>
+
+    <main class="container_card">
+      <div class="cards"></div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Que Fome! — Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <div id="fab-add" class="fab-add">
+      <i class="ri-add-line"></i>
+    </div>
+
+    <script src="assets/js/armazenamento.js"></script>
+    <script src="assets/js/minhas-receitas.js"></script>
+    <script src="assets/js/user.js"></script>
+    <script src="assets/js/darkmode.js"></script>
+  </body>
+</html>

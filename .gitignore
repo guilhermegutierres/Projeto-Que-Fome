@@ -1,0 +1,13 @@
+# Dependências do Node (Resolve o problema de travamento e tamanho)
+node_modules/
+
+# Arquivos de senhas e configurações locais de banco de dados e API
+.env
+
+# Arquivos de log de erros
+npm-debug.log*
+yarn-error.log*
+
+# Arquivos temporários do Windows/macOS
+Thumbs.db
+.DS_Store
